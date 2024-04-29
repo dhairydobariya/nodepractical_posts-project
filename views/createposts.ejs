@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <h2>create your own post now</h2>
+
+    <form action="/postsdata" method="post">
+        <input type="hidden" , name="id" value="<%= maindata.id %>">
+        <input type="hidden" , name="name" , value="<%= maindata.name %>">
+        <input type="text" , name="title" , placeholder="enter your post name"><br><br>
+        <input type="text" , name="body" , placeholder="enter your description "><br><br>
+        <input type="radio" , name="status" value="active"><span> : active</span><input type="radio" , name="status" value="inactive"><span> : inactive</span><br><br>
+        <input type="text" name="latitude" placeholder="enter your latitude value"><br><br>
+        <input type="text" name="longitude" placeholder="longitude"><br><br>
+        <input type="submit">
+
+    </form>
+
+<br><br><br>
+    <a href="/readposts">read your post</a>
+</body>
+</html>

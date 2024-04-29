@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border : 1px solid black;
+            width: 100%;
+            padding: 20px 40px ;
+        }
+        .box a {
+            padding: 10px 20px;
+            text-decoration: none;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <% let count = 0 %>
+    <% let dcount = 0 %>
+        
+        <% data.forEach((ele) => { %>
+            
+                    <% if(ele.status == "active") { %>
+
+                        <% count++%>
+
+                    <%}else{ %>
+
+                        <% dcount++%>
+
+                    <% }%> 
+                
+
+            <% })%>
+
+
+            <h2>read our post</h2>
+            <h3>active : <%= count%></h3>
+            <h3>inactive : <%= dcount%></h3>
+
+            <% data.forEach((ele) => { %>
+
+                <div class="box">
+                <h3><%= ele.title%></h3>
+                <p><%= ele.body%></p>
+                <span><%=ele.status%></span>
+                <p><%= ele.geo%></p>
+                <p><%= ele.createdby%></p>
+                <a href="/editposts/<%=ele.id%>">edit posts</a>
+                <a href="/deleteposts/<%=ele.id%>">delete posts</a>
+            </div>
+            <% })%>
+            
+        <br>
+        <a href="/blogpage">return blog page</a>
+</body>
+</html>
